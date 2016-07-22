@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    style="@style/WrapWrap"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical">
+
+    <ListView
+        android:id="@+id/widget_list"
+        style="@style/WrapWrap"
+        android:layout_marginLeft="@dimen/double_margin"
+        android:layout_marginStart="@dimen/double_margin"
+        android:layout_marginTop="@dimen/double_margin"
+        android:background="@drawable/control_bubble_bck"
+        android:orientation="vertical"
+        android:visibility="gone"/>
+
+    <ImageView
+        android:id="@+id/on_screen_btn"
+        android:layout_width="@dimen/big_margin"
+        android:layout_height="@dimen/big_margin"
+        android:layout_margin="0dp"
+        android:background="@drawable/control_bubble_bck"
+        android:contentDescription="@string/widget_btn_content"
+        android:src="@drawable/logo_white"/>
+</RelativeLayout>

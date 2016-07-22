@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    style="@style/WrapWrap"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_margin="0dp"
+    android:orientation="vertical"
+    android:paddingBottom="0dp">
+
+    <TextView
+        android:id="@+id/widget_item_name"
+        style="@style/TitleText"
+        android:layout_gravity="center_horizontal"/>
+
+    <LinearLayout
+        style="@style/WrapWrapHor"
+        android:layout_gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/widget_item_on"
+            style="@style/NormalText"
+            android:drawableEnd="@drawable/ic_light"
+            android:drawablePadding="@dimen/margin"
+            android:drawableRight="@drawable/ic_light"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/margin"
+            android:paddingLeft="@dimen/double_margin"
+            android:paddingRight="@dimen/double_margin"
+            android:paddingTop="@dimen/margin"
+            android:text="@string/widget_on"/>
+
+        <TextView
+            android:id="@+id/widget_item_off"
+            style="@style/NormalText"
+            android:drawableLeft="@drawable/ic_dark"
+            android:drawablePadding="@dimen/margin"
+            android:drawableStart="@drawable/ic_dark"
+            android:gravity="center_vertical"
+            android:paddingBottom="@dimen/margin"
+            android:paddingLeft="@dimen/double_margin"
+            android:paddingRight="@dimen/double_margin"
+            android:paddingTop="@dimen/margin"
+            android:text="@string/widget_off"/>
+    </LinearLayout>
+</LinearLayout>

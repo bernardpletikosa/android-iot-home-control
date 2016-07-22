@@ -1,0 +1,48 @@
+<resources>
+
+    <!--WIDGET-->
+    <style name="MatchMatch" parent="@android:style/Widget">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="MatchMatchHor" parent="MatchMatch">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="MatchWrap" parent="MatchMatch">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MatchWrapHor" parent="MatchWrap">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="WrapWrap" parent="MatchMatch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapWrapHor" parent="WrapWrap">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!--TEXT-->
+    <style name="Text" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/text_size</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="Button" parent="Text">
+        <item name="android:textSize">@dimen/button_text_size</item>
+        <item name="android:gravity">center_horizontal|center_vertical</item>
+        <item name="android:paddingEnd">@dimen/margin</item>
+        <item name="android:paddingStart">@dimen/margin</item>
+        <item name="android:layout_marginEnd">@dimen/margin</item>
+        <item name="android:layout_marginStart">@dimen/margin</item>
+    </style>
+</resources>

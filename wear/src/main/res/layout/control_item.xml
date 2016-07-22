@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout style="@style/MatchMatch"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:background="@color/colorPrimaryDark"
+                tools:context="com.bernardpletikosa.hc.MainActivity"
+                tools:deviceIds="wear_square">
+
+    <LinearLayout
+        style="@style/MatchWrap"
+        android:layout_centerInParent="true">
+
+        <LinearLayout
+            android:id="@+id/button_container"
+            style="@style/MatchWrapHor"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/button_on"
+                style="@style/Button"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/ic_light"
+                android:text="@string/on"/>
+
+            <Button
+                android:id="@+id/button_off"
+                style="@style/Button"
+                android:background="@android:color/transparent"
+                android:drawableTop="@drawable/ic_dark"
+                android:text="@string/off"/>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/Text"
+            android:layout_gravity="center_horizontal"
+            android:paddingTop="@dimen/margin"/>
+    </LinearLayout>
+</RelativeLayout>

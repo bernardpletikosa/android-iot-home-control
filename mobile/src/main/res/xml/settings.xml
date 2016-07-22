@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="">
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/control_service_key"
+            android:summary="@string/control_summary"
+            android:title="@string/control_title"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/vibration_key"
+            android:summary="@string/vibration_summary"
+            android:title="@string/vibration_title"/>
+
+        <CheckBoxPreference
+            android:defaultValue="false"
+            android:key="@string/notification_key"
+            android:summary="@string/notification_summary"
+            android:title="@string/notification_title"/>
+
+        <EditTextPreference
+            android:key="@string/security_key"
+            android:summary="@string/security_summary"
+            android:title="@string/security_title"/>
+    </PreferenceCategory>
+</PreferenceScreen>

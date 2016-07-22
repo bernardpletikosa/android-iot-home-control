@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout style="@style/MatchMatch"
+              xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              tools:context="com.bernardpletikosa.hc.MainActivity"
+              tools:deviceIds="wear_square">
+
+    <FrameLayout
+        style="@style/MatchMatch">
+
+        <android.support.wearable.view.GridViewPager
+            android:id="@+id/pager"
+            style="@style/MatchMatch"
+            android:keepScreenOn="true"/>
+
+        <android.support.wearable.view.DotsPageIndicator
+            android:id="@+id/page_indicator"
+            style="@style/WrapWrapHor"
+            android:layout_gravity="center_horizontal|top"
+            app:dotFadeOutDelay="100000"/>
+
+        <TextView
+            android:id="@+id/pager_warning"
+            style="@style/MatchWrap"
+            android:text="No controls"
+            android:textColor="@color/colorAccent"/>
+    </FrameLayout>
+</LinearLayout>

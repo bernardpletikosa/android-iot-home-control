@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    style="@style/MatchWrap"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_marginTop="?attr/actionBarSize"
+    android:animateLayoutChanges="true"
+    android:padding="@dimen/double_margin">
+
+    <TextView
+        android:id="@+id/control_add_title"
+        style="@style/TitleText"
+        android:layout_width="match_parent"
+        android:drawableRight="@drawable/add"
+        android:text="@string/fragment_main_controls_add_title"/>
+
+    <include layout="@layout/divider"/>
+
+    <LinearLayout
+        android:id="@+id/control_add_container"
+        style="@style/MatchWrap"
+        android:gravity="center_horizontal"
+        android:visibility="gone">
+
+        <EditText
+            android:id="@+id/control_name"
+            style="@style/MatchWrap"
+            android:layout_marginTop="@dimen/margin"
+            android:gravity="center_horizontal"
+            android:hint="@string/fragment_main_hint_name"
+            android:imeOptions="actionNext"
+            android:paddingEnd="@dimen/margin"
+            android:paddingLeft="0dp"
+            android:paddingRight="@dimen/margin"
+            android:paddingStart="0dp"
+            android:singleLine="true"
+            android:textSize="@dimen/normal_text"/>
+
+        <LinearLayout
+            style="@style/MatchWrapHor">
+
+            <EditText
+                android:id="@+id/control_on"
+                style="@style/MatchWrap"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:hint="@string/fragment_main_hint_on"
+                android:imeOptions="actionNext"
+                android:inputType="number"
+                android:paddingEnd="@dimen/margin"
+                android:paddingLeft="0dp"
+                android:paddingRight="@dimen/margin"
+                android:paddingStart="0dp"
+                android:singleLine="true"
+                android:textSize="@dimen/normal_text"/>
+
+            <EditText
+                android:id="@+id/control_off"
+                style="@style/MatchWrap"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center_horizontal"
+                android:hint="@string/fragment_main_hint_off"
+                android:imeOptions="actionDone"
+                android:inputType="number"
+                android:paddingEnd="0dp"
+                android:paddingLeft="@dimen/margin"
+                android:paddingRight="0dp"
+                android:paddingStart="@dimen/margin"
+                android:singleLine="true"
+                android:textSize="@dimen/normal_text"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/control_add_btn"
+            style="@style/WrapWrap"
+            android:layout_marginTop="@dimen/double_margin"
+            android:background="@android:color/transparent"
+            android:drawableLeft="@drawable/check"
+            android:padding="@dimen/margin"
+            android:text="@string/fragment_main_btn_save"
+            android:textSize="@dimen/normal_text"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/control_update"
+        style="@style/TitleText"
+        android:layout_width="match_parent"
+        android:layout_marginTop="@dimen/big_margin"
+        android:drawableRight="@drawable/update"
+        android:text="@string/fragment_main_controls_title"/>
+
+    <include layout="@layout/divider"/>
+
+    <ListView
+        android:id="@+id/control_list"
+        style="@style/WrapWrap"
+        android:divider="@android:drawable/divider_horizontal_dark"
+        android:paddingTop="@dimen/double_margin"/>
+
+</LinearLayout>

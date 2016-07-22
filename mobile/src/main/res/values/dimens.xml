@@ -1,0 +1,14 @@
+<resources>
+
+    <dimen name="default_elevation">2dp</dimen>
+
+    <dimen name="normal_text">16sp</dimen>
+    <dimen name="title_text">22sp</dimen>
+
+    <dimen name="margin">8dp</dimen>
+    <dimen name="double_margin">16dp</dimen>
+    <dimen name="big_margin">32dp</dimen>
+
+    <dimen name="widget_width">800px</dimen>
+
+</resources>

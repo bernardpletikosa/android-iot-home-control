@@ -1,0 +1,59 @@
+<resources>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="preferenceTheme">@style/PreferenceThemeOverlay</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Dark"/>
+
+    <!--WIDGET-->
+    <style name="MatchMatch" parent="@android:style/Widget">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="MatchMatchHor" parent="MatchMatch">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="MatchWrap" parent="MatchMatch">
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="MatchWrapHor" parent="MatchWrap">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="WrapWrap" parent="MatchMatch">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="WrapWrapHor" parent="WrapWrap">
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!--TEXT-->
+    <style name="TitleText" parent="@android:style/Widget.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/title_text</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textColor">@color/text</item>
+        <item name="android:singleLine">true</item>
+    </style>
+
+    <style name="NormalText" parent="TitleText">
+        <item name="android:textSize">@dimen/normal_text</item>
+        <item name="android:textColor">@color/text</item>
+    </style>
+</resources>
