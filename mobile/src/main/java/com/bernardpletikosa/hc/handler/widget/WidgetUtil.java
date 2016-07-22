@@ -1,21 +1,21 @@
-package com.bernardpletikosa.hc.handler;
+package com.bernardpletikosa.hc.handler.widget;
 
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 
-public class ControlServiceUtil {
+public class WidgetUtil {
 
     public static void startService(Context context) {
-        context.startService(new Intent(context, ControlService.class));
+        context.startService(new Intent(context, WidgetService.class));
     }
 
     public static void stopService(Context context) {
-        context.stopService(new Intent(context, ControlService.class));
+        context.stopService(new Intent(context, WidgetService.class));
     }
 
     public static boolean isRunning(Context context) {
-        return isRunning(context, ControlService.class);
+        return isRunning(context, WidgetService.class);
     }
 
     public static boolean isRunning(Context context, Class<?> serviceClass) {
@@ -29,7 +29,7 @@ public class ControlServiceUtil {
     }
 
     public static void restartService(Context context) {
-        if (!ControlServiceUtil.isRunning(context)) return;
+        if (!WidgetUtil.isRunning(context)) return;
         stopService(context);
         startService(context);
     }

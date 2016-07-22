@@ -36,10 +36,7 @@ public class HomeApiTask extends AsyncTask<Integer, Void, Boolean> {
         String response = "";
         HttpURLConnection urlConnection = null;
         try {
-            final String urlString = SERVER_URL + "/" + command[0];
-            Log.i("HomeApiTask", "URL: " + urlString);
-
-            URL url = new URL(urlString);
+            URL url = new URL(SERVER_URL + "/" + command[0]);
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestProperty("Authorization", API_AUTH);
 

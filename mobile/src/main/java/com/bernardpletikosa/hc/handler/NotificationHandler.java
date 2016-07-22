@@ -42,7 +42,7 @@ public class NotificationHandler {
                 if (vibrator != null) vibrator = null;
                 System.gc();
             }
-        }).delaySubscription(2, TimeUnit.SECONDS).subscribe();
+        }).delaySubscription(2000, TimeUnit.MILLISECONDS).subscribe();
     }
 
     public static Notification notifyService(Context context, PendingIntent intent) {

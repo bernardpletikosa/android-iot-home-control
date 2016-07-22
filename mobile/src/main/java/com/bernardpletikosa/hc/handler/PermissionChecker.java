@@ -9,26 +9,19 @@ import android.provider.Settings;
 
 public class PermissionChecker {
 
-    private Context mContext;
-
-    public PermissionChecker(Context context) {
-        mContext = context;
+    @TargetApi(Build.VERSION_CODES.M)
+    public static boolean isRequiredPermissionGranted(Context context) {
+        return !isMarshmallowOrHigher() || Settings.canDrawOverlays(context);
     }
 
     @TargetApi(Build.VERSION_CODES.M)
-    public boolean isRequiredPermissionGranted() {
-        if (isMarshmallowOrHigher()) return Settings.canDrawOverlays(mContext);
-        return true;
-    }
-
-    @TargetApi(Build.VERSION_CODES.M)
-    public Intent createRequiredPermissionIntent() {
+    public static Intent createRequiredPermissionIntent(Context context) {
         if (!isMarshmallowOrHigher()) return null;
         return new Intent(Settings.ACTION_MANAGE_OVERLAY_PERMISSION,
-                Uri.parse("package:" + mContext.getPackageName()));
+                Uri.parse("package:" + context.getPackageName()));
     }
 
-    private boolean isMarshmallowOrHigher() {
+    private static boolean isMarshmallowOrHigher() {
         return Build.VERSION.SDK_INT >= Build.VERSION_CODES.M;
     }
 }

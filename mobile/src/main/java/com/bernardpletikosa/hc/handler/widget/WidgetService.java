@@ -1,14 +1,15 @@
-package com.bernardpletikosa.hc.handler;
+package com.bernardpletikosa.hc.handler.widget;
 
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 
+import com.bernardpletikosa.hc.handler.NotificationHandler;
 import com.bernardpletikosa.hc.ui.MainActivity;
 import com.bernardpletikosa.hc.ui.widget.ControlWidget;
 
-public class ControlService extends Service {
+public class WidgetService extends Service {
 
     private final static int FOREGROUND_ID = 999;
 

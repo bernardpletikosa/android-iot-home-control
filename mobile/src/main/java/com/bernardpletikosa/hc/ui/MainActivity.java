@@ -23,7 +23,7 @@ import com.google.android.gms.wearable.DataMap;
 import com.google.android.gms.wearable.PutDataMapRequest;
 import com.google.android.gms.wearable.PutDataRequest;
 import com.google.android.gms.wearable.Wearable;
-import com.bernardpletikosa.hc.handler.ControlServiceUtil;
+import com.bernardpletikosa.hc.handler.widget.WidgetUtil;
 import com.bernardpletikosa.hc.ui.fragment.MainFragment;
 import com.bernardpletikosa.hc.ui.fragment.SettingsFragment;
 
@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements PreferenceFragmen
     @Override public void onDataChanged(DataEventBuffer dataEventBuffer) {}
 
     public void updateAndRestart() {
-        ControlServiceUtil.restartService(this);
+        WidgetUtil.restartService(this);
 
         DataMap dataMap = new DataMap();
         dataMap.putStringArray(Storage.WEAR_UPDATE_DATA, Storage.instance(this).getAllControlsAsArray());

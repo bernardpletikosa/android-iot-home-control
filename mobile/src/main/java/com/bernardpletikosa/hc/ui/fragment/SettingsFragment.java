@@ -10,31 +10,28 @@ import android.support.v7.preference.CheckBoxPreference;
 import android.support.v7.preference.PreferenceFragmentCompat;
 
 import com.bernardpletikosa.hc.R;
-import com.bernardpletikosa.hc.handler.ControlServiceUtil;
-import com.bernardpletikosa.hc.storage.Storage;
+import com.bernardpletikosa.hc.handler.widget.WidgetUtil;
 import com.bernardpletikosa.hc.handler.PermissionChecker;
+import com.bernardpletikosa.hc.storage.Storage;
 
 public class SettingsFragment extends PreferenceFragmentCompat implements SharedPreferences.OnSharedPreferenceChangeListener {
 
-    private PermissionChecker mPermissionChecker;
     private SharedPreferences mSharedPreferences;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        mPermissionChecker = new PermissionChecker(getActivity());
-
         mSharedPreferences = getPreferenceManager().getSharedPreferences();
 
-        if (!mPermissionChecker.isRequiredPermissionGranted()) {
+        if (!PermissionChecker.isRequiredPermissionGranted(getActivity())) {
             enableControlService(false);
-            Intent intent = mPermissionChecker.createRequiredPermissionIntent();
+            Intent intent = PermissionChecker.createRequiredPermissionIntent(getActivity());
             startActivityForResult(intent, Storage.REQUIRED_PERMISSION_REQUEST_CODE);
         } else {
             enableControlService(true);
             if (mSharedPreferences.getBoolean(Storage.SERVICE_ENABLED_KEY, false)
-                    && !ControlServiceUtil.isRunning(getActivity()))
-                ControlServiceUtil.startService(getActivity());
+                    && !WidgetUtil.isRunning(getActivity()))
+                WidgetUtil.startService(getActivity());
         }
 
         setUpNotification();
@@ -48,7 +45,7 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode != Storage.REQUIRED_PERMISSION_REQUEST_CODE) return;
 
-        if (mPermissionChecker.isRequiredPermissionGranted()) enableControlService(true);
+        if (PermissionChecker.isRequiredPermissionGranted(getActivity())) enableControlService(true);
         else if (getView() != null)
             Snackbar.make(getView(), R.string.fragment_settings_permission, Snackbar.LENGTH_LONG).show();
     }
@@ -69,10 +66,10 @@ public class SettingsFragment extends PreferenceFragmentCompat implements Shared
     public void onSharedPreferenceChanged(SharedPreferences prefs, String key) {
         if (Storage.SERVICE_ENABLED_KEY.equals(key)) {
             boolean enabled = prefs.getBoolean(key, false);
-            if (enabled && !ControlServiceUtil.isRunning(getActivity()))
-                ControlServiceUtil.startService(getActivity());
+            if (enabled && !WidgetUtil.isRunning(getActivity()))
+                WidgetUtil.startService(getActivity());
             else
-                ControlServiceUtil.stopService(getActivity());
+                WidgetUtil.stopService(getActivity());
         } else if (Storage.VIBRATION_ENABLED_KEY.equals(key)) {
             Storage.instance(getActivity()).vibration(prefs.getBoolean(key, false));
         } else if (Storage.NOTIFICATION_ENABLED_KEY.equals(key)) {
